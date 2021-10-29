@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export JAVA_HOME=/opt/lambda-custom-java-runtime
+export JAVA_EXEC=${JAVA_HOME}/bin/java
+
+${JAVA_EXEC} -p ${LAMBDA_TASK_ROOT}/java-custom-runtime.jar -m java.custom.runtime/lambda.Main

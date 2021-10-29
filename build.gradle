@@ -1,0 +1,15 @@
+plugins {
+    id "java"
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+compileJava.options.encoding = "UTF-8"
+
+jar.archiveBaseName = "java-custom-runtime"
+
+task distZip(type: Zip) {
+    from jar.archiveFile
+    from fileTree(dir: "${projectDir}/src/main/script/", include: "*")
+}
